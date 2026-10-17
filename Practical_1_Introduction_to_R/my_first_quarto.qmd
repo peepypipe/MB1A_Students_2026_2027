@@ -1,0 +1,159 @@
+---
+title: "MB1A Practical 1"
+author: "Coco Wang"
+format: html
+---
+
+I have measured the diameter of four bacterial colonies.
+The results were as follows: 2.2mm, 1.6mm, 3.3mm, 4.0mm.
+
+I want to calculate the total diameter of these colonies.
+```{r}
+total_colony_diameter <- sum(2.2, 1.6, 3.3, 4.0)
+print(total_colony_diameter)
+```
+The total diameter of my colonies is 11.1 mm.
+
+```{r}
+round(3.14159)
+```
+```{r}
+round(3.14159, digits = 2)
+```
+
+```{r}
+print(seq(1, 10, 2))
+print(seq(5, 15, 5))
+```
+
+```{r}
+print(rep(5, 7))
+print(rep(x = 5, time = 7))
+```
+
+```{r}
+# This code calculates the sum of two numbers
+1 + 9
+```
+
+```{r}
+my_variable <- 12
+print(my_variable)
+```
+
+```{r}
+x <- "hi there"
+print(class(x))
+```
+
+```{r}
+x <- "hello"
+print(class(x))
+x <- "13"
+print(class(x))
+x <- "TRUE"
+print(class(x))
+```
+
+
+```{r}
+x <- "hello"
+print(class(x))
+x <- 13
+print(class(x))
+x <- TRUE
+print(class(x))
+```
+
+```{r}
+cell_ID_1 <- "CX1"
+cell_ID_2 <- "CX2"
+
+treated_1 <- TRUE
+treated_2 <- FALSE
+
+number_of_cells_before_1 <- 5415
+number_of_cells_before_2 <- 8123
+
+number_of_cells_after_1 <- 1432
+number_of_cells_after_2 <- 7543
+```
+
+```{r}
+install.packages("fortunes")
+```
+
+```{r}
+my_first_vector <- c(1, 5, 9)
+print(my_first_vector)
+```
+
+cell_ID_vec <- c(cell_ID_1, cell_ID_2)
+```{r}
+cell_ID_1 <- "CX1"
+cell_ID_2 <- "CX2"
+
+treated_1 <- TRUE
+treated_2 <- FALSE
+
+number_of_cells_before_1 <- 5415
+number_of_cells_before_2 <- 8123
+
+number_of_cells_after_1 <- 1432
+number_of_cells_after_2 <- 7543
+
+#combine into vector
+cell_ID_vec <- c(cell_ID_1, cell_ID_2)
+treated_vec <- c(treated_1, treated_2)
+n_treated_bef <- c(number_of_cells_before_1, number_of_cells_before_2)
+n_treated_aft <- c(number_of_cells_after_1, number_of_cells_after_2)
+
+```
+
+```{r}
+nice_food <- c("cheese", "beans", "potatoes")
+print(nice_food[1])
+```
+
+```{r}
+all_my_pets <- c("dog", "horse", "guinea pig", "chicken", "cat")
+my_only_bird <- all_my_pets[4]
+print(my_only_bird)
+```
+
+```{r}
+my_data_frame <- tibble(
+  fruit = c("apple", "pear", "banana"),
+  length = c(22, 30, 55),
+  weight = c(150, 165, 170)
+)
+
+
+print(my_data_frame)
+```
+```{r}
+# for example
+df <- tibble(
+  cell_ID = c("CX1", "CX2"),
+  treated = c(TRUE, FALSE),
+  num_cells_before = c(5415, 8123),
+  num_cells_after = c(1432, 7543)
+)
+
+gt(df)
+```
+```{r}
+library(tidyverse)
+```
+
+```{r}
+my_data_frame <- tibble(
+  fruit = c("apple", "pear", "banana"),
+  length = c(22, 30, 55),
+  weight = c(150, 165, 170)
+)
+
+
+print(my_data_frame)
+```
+
