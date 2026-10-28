@@ -1,0 +1,69 @@
+---
+title: "prac2_exercises"
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this 
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+input_vec <- c(5, -10, 4, -3)
+
+my_result <- input_vec |>
+  mean() |>
+  abs() |>
+  round ()
+
+print(my_result)
+```
+
+```{r}
+bird_breeding_selected <- bird_breeding_sites |>
+  select(Site, Longitude, Latitude)
+
+gt(bird_breeding_selected)
+```
+```{r}
+bird_breeding_selected <- bird_breeding_sites |>
+  select(Site, Longitude, Latitude) |>
+  distinct()
+
+gt(bird_breeding_selected)
+```
+```{r}
+```
+
+
+```{r}
+bird_breeding_selected <- bird_breeding_sites |>
+  select(Site, Longitude, Latitude) |>
+  distinct() |>
+  rename(Breeding_Longitude = Longitude, Breeding_Latitude = Latitude)
+
+gt(bird_breeding_selected)
+```
+```{r}
+y <- 12
+y == 7
+y < 15
+y > 20
+y <= 12
+```
+

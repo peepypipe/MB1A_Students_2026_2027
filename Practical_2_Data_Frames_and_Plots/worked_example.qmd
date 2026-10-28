@@ -1,0 +1,110 @@
+---
+title: "worked_example"
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this 
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+library(gt)
+library(tidyverse)
+library(maps)
+```
+```{r}
+setwd("~/MB1A_Students_2026_2027/Practical_2_Data_Frames_and_Plots/data")
+bird_breeding_sites <- readcsv("breeding_site_locations.csv")
+gt(bird_breeding_sites)
+```
+```{r}
+bird_breeding_sites <- read_csv("data/breeding_site_locations.csv")
+gt(bird_breeding_sites)
+```
+```{r}
+colnames(bird_breeding_sites)
+```
+
+```{r}
+glimpse(bird_breeding_sites)
+```
+
+```{r}
+print(nrow(bird_breeding_sites))
+print(ncol(bird_breeding_sites))
+print(dim(bird_breeding_sites))
+```
+
+```{r}
+bird_migration_connectivity <- read_csv("data/migratory_connectivity_dataset.csv")
+gt(head(bird_migration_connectivity))
+```
+```{r}
+glimpse(bird_migration_connectivity)
+```
+
+```{r}
+my_numbers <- c(2, 4, 6, 8)
+
+sum(my_numbers)
+
+my_numbers <- c(2, 4, 6, 8)
+
+my_numbers |> sum()
+```
+
+```{r}
+my_numbers <- c(2, 4, 6, 8)
+
+print(my_numbers |>
+  sum() |>
+  sqrt())
+```
+
+```{r}
+my_numbers <- c(2, 4, 6, 8)
+
+my_result <- my_numbers |>
+  sum() |>
+  sqrt() |>
+  round()
+
+print(my_result)
+```
+
+```{r}
+input_vec <- c(5, -10, 4, -3)
+```
+
+```{r}
+bird_migration_selected <- bird_migration_connectivity |>
+  select(Site, winterLongitude, winterLatitude, pslon, pslat, iblon, iblat, awestlon, awestlat) |>
+  distinct() |>
+  rename(Winter_Longitude = winterLongitude, Winter_Latitude = winterLatitude, Stopover_Longitude = pslon, Stopover_Latitude = pslat, Iberian_Longitude = iblon, Iberian_Latitude = iblat, Westmost_Longitude = awestlon, Westmost_Latitude = awestlat)
+
+gt(head(bird_migration_selected))
+```
+```{r}
+bird_breeding_exc <-bird_breeding_selected |> filter(Site != "Spain")
+bird_migration_exc <-bird_migration_selected |> filter(Site != "Spain")
+
+gt(bird_breeding_exc)
+gt(bird_migration_exc)
+```
+
