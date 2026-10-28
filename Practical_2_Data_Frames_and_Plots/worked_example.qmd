@@ -28,11 +28,7 @@ library(gt)
 library(tidyverse)
 library(maps)
 ```
-```{r}
-setwd("~/MB1A_Students_2026_2027/Practical_2_Data_Frames_and_Plots/data")
-bird_breeding_sites <- readcsv("breeding_site_locations.csv")
-gt(bird_breeding_sites)
-```
+
 ```{r}
 bird_breeding_sites <- read_csv("data/breeding_site_locations.csv")
 gt(bird_breeding_sites)
@@ -101,10 +97,9 @@ bird_migration_selected <- bird_migration_connectivity |>
 gt(head(bird_migration_selected))
 ```
 ```{r}
-bird_breeding_exc <-bird_breeding_selected |> filter(Site != "Spain")
 bird_migration_exc <-bird_migration_selected |> filter(Site != "Spain")
 
-gt(bird_breeding_exc)
+
 gt(bird_migration_exc)
 ```
 
